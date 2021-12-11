@@ -1,0 +1,106 @@
+
+// CONFIG GIT USER
+1.git config --global user.name "Milos Mijajlovic" -> we set the config to userName
+
+2.git config --global user.eamil " milos92mijajlovic@gmail.com " -> we also post user email globally
+
+3.code-> we set the visual studio code as the desired editor
+
+4.git config --global core.editor "code --wait" -> tell the terminal in vscode not to close the terminal until we have completed our instance
+
+5.git config --global -e -> this command opens a new window in vscod with our git.config file 
+
+6.git config --global core.autocrlf true-> we set how the code will end (/) with which character
+
+7.git config --help -> opens a window for auxiliary config commands
+
+// MAKE A FOLDER IN CMD 
+1.cd C: \ Users \ DELL \ desktop \ GIT -> enter the GITA project folder
+
+2.mkdir -> created a new Moon folder
+
+3.cd Moon -> enter the Moon folder
+
+4.git init -> we create a subfolder .git in the Moon folder 
+
+5.rm -rf -git -> delete hiden folder git (just for demonstration, no need to do that because we will decorate the folder)
+
+
+
+// GIT COMMIT 
+1.INDEX IN GIT -> REPRESENTS THE MEDIUM USED FOR MODIFIED FILES THAT NEED TO BE DRAWN AND TRANSFERRED TO THE .GIT FOLDER OR HYDOW FOLDER
+
+2.ADD COMMAND INSERTS A READY FILE THAT SHOULD BE PAINTED AND SENT TO .GIT 
+
+ONE COMMITTEE CONTAINS THE FOLLOWING:
+-ID 
+-MESSAGE
+-DATE / TIME
+-AUTHOR
+-COMPLETE SNAPSHOT
+
+// ADD FILES TO FOLDER THROUGH GIT
+1.echo hello> file.txt
+
+2.git status-> we check if git follows our file in the directory 
+
+3.git add. -> we include all the files to be tracked in the folder, but we have to be careful with the point because it includes everything in the file which may contain some files that are large and not ready to be taken
+
+4. except for the dot, the safer way to add is just git add file.txt e.g. 
+
+5.echo world >> file.txt means changing an existing file 
+
+6.but when we did this, git made a picture of the whole original file, and only changed the file.txt in the PREPARATION INDEX 
+
+7.git commit -> opens a new page in vs code 
+
+8. What we changed in that window or left a comment is engraved in all three directories
+
+9.commits should not be too long or too short, they just need to directly indicate what we have changed in the code
+
+10.git commit -am "Fix the bug prevented the users from signing up" -> we are changing the file, we previously put the echo test >> file.txt
+
+11.git rm file1.txt means deleting the desired file 
+
+12. but it is still in the preparation field, now we can do commit-> git commit -m "Remove unused code"
+
+// CHANGE FILE NAME 
+1.git mv file.txt main.js
+
+2.git rm --cached bin / -> function that deletes a file directly in the index environment 
+
+// PREPARATION FOR ADDING KOM TO CODE LINES
+
+0. if we type only git diff then we have the whole change 
+
+1.git diff --staged -> command that shows what we have in the preparation area that goes to the next commit
+
+explanation: what we are comparing is a / file1.js b / file1.js
+
+-the first copy is the old copy we have, and the second is the one we have in the stage area
+-after that we have --- / dev / null and +++ b / file1.js
+--- indicate changes to the old file 
++++ indicate changes to a new file that is in the stage area
+
+// USING VISUEL STUDIO CODE TO COMPARE FILES
+
+1.git config --global diff.tool vscode -> with this command we say that vscode is our global editor and to wait until the changes in the file are finished 
+
+2.git config --global difftool.vscode.cmd "code --wait --diff $ LOCAL $ REMOTE"
+
+3.git difftool -> shows changes in the file but in vscod
+
+4.git difftool --staged -> shows only the value we changed in the old file and added in the new
+
+5.git ls-tree HEAD -> shows the changes in the HEAD part that we made 
+
+6.git clean -fd -> delete only files that have ?? and it is not known if and where the changes in these files came from
+
+7.git restore --source = HEAD ~ 1 file.js -> restores the previously deleted file 
+
+// GIT OBJECTS 
+
+1.COMMITS
+2.BLOBS (FILES)
+3.TREES (DIRECTIONS)
+4.TAGS
